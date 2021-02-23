@@ -1,0 +1,40 @@
+.product-table{
+  height :300px;
+  overflow-y: auto;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+table {
+  width: 100%;
+}
+
+.button-class{
+  margin-left: 1000px;
+  margin-top : 50px;
+}
+
+.topic{
+  margin-top:-50px;
+  margin-left: 100px;
+}
+
+.drop-down{
+  margin-left: 100px;
+}
+
+.details{
+  margin-left : 35%;
+  margin-top :15px;
+  font-size:2em
+}
+
+.container{
+  margin-left: 60px;
+}
+
+
+
+

@@ -1,0 +1,47 @@
+<div class="calculationForm">
+  <p class="details">Calculate your price here<p></p>
+  <form class="example-form" [formGroup]="formGroup" (ngSubmit)="calculationProcess()">
+    <div class="container">
+      <mat-form-field>
+        <mat-label>Choose an option</mat-label>
+        <mat-select id="productID" formControlName="productID">
+          <mat-option value="" selected>Select Product</mat-option>
+          <mat-option value="{{product[0].id}}">{{product[0].name}}</mat-option>
+          <mat-option value="{{product[1].id}}">{{product[1].name}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="formGroup.controls['productID'].errors?.required">This field is mandatory.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Carton</mat-label>
+        <input type="number" id="carton" matInput placeholder="number of carton" formControlName="carton" name="carton"/>
+        <mat-error *ngIf="formGroup.controls['carton'].errors?.required">This field is mandatory.</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Units</mat-label>
+        <input type="number" id="unit" matInput placeholder="number of unit" formControlName="unit" name="unit"/>
+        <mat-error *ngIf="formGroup.controls['unit'].errors?.required">This field is mandatory.</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <div  class="same" *ngIf="formGroup.value.productID ==='12'">
+        <mat-card class="example-card">
+          <img mat-card-image src="/assets/images/penguin-ear.jpg" alt="penguinears">
+        </mat-card>
+      </div>
+
+      <div class="same" *ngIf="formGroup.value.productID ==='11'">
+        <mat-card class="example-card">
+          <img mat-card-image src="/assets/images/horse-shoe.jpg" alt="horseshoe">
+        </mat-card>
+      </div>
+
+      <div class="same">
+        <h3 *ngIf="formGroup.valid" class="amount">amount to pay : Rs. {{amount | json}}</h3>
+      </div>
+    </div>
+
+    <button class="buttonClass" mat-flat-button color="primary" type="submit" [disabled]="!formGroup.valid">Submit</button>
+  </form>
+</div>

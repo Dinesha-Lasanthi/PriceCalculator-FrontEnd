@@ -1,0 +1,15 @@
+<div id="login-layout" class="flex-col">
+  <div class="flex h-screen flex-col">
+    <div class="mb-0 mt-auto">
+      <div class="product-outlet">
+        <mat-toolbar color="primary">
+          <span>App</span>
+          <div class="spacer"></div>
+          <a mat-button [routerLink]="['']" routerLinkActive="router-link-active" >home</a>
+          <a mat-button [routerLink]="['/calculator']" routerLinkActive="router-link-active">calculator</a>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
